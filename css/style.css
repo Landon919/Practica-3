@@ -1,0 +1,240 @@
+/* ===== Variables (paleta tomada de tu proyecto anterior) ===== */
+:root {
+  --azul: #355CC0;
+  --azul-claro: #EBF0FF;
+  --fondo: #F7F9FA;
+  --blanco: #ffffff;
+  --texto: #32363B;
+  --texto-suave: #707780;
+  --borde: #E6E9ED;
+  --error: #c0392b;
+  --ok: #27ae60;
+  --radio: 10px;
+}
+
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito Sans", system-ui, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.5;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ===== Encabezado ===== */
+header {
+  background: var(--blanco);
+  border-bottom: 1px solid var(--borde);
+  padding: 1rem 2rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--azul);
+}
+
+header p {
+  margin: 0;
+  color: var(--texto-suave);
+}
+
+/* ===== Contenedor principal ===== */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+}
+
+/* ===== Resumen (contadores) ===== */
+.resumen {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 1rem 1.25rem;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+.card p {
+  margin: 0.25rem 0 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--azul);
+}
+
+/* ===== Formulario ===== */
+.form-section {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 1.25rem;
+}
+
+#productoForm {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 0.75rem;
+}
+
+#descripcion,
+#btnGuardar,
+#btnCancelar {
+  grid-column: span 3;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  font: inherit;
+  color: var(--texto);
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--texto-suave);
+}
+
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--azul);
+  outline-offset: 2px;
+}
+
+/* ===== Botones ===== */
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--azul);
+  color: var(--blanco);
+}
+
+button:hover {
+  filter: brightness(0.92);
+}
+
+#btnCancelar {
+  background: var(--azul-claro);
+  color: var(--azul);
+}
+
+/* ===== Mensajes de validación ===== */
+#mensaje {
+  min-height: 1.4rem;
+  margin: 0.75rem 0 0;
+  font-weight: 600;
+}
+
+.error {
+  color: var(--error);
+}
+
+.ok {
+  color: var(--ok);
+}
+
+/* ===== Buscador ===== */
+#buscador {
+  margin-bottom: 1rem;
+}
+
+/* ===== Lista de productos ===== */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.product-card {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.product-card h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+  color: var(--azul);
+}
+
+.product-card p {
+  margin: 0;
+  overflow-wrap: anywhere; /* evita que textos largos rompan la tarjeta */
+}
+
+.product-card button {
+  margin-top: 0.5rem;
+  margin-right: 0.4rem;
+}
+
+.product-card button[data-accion="editar"] {
+  background: var(--azul-claro);
+  color: var(--azul);
+}
+
+.product-card button[data-accion="eliminar"] {
+  background: #fdecea;
+  color: var(--error);
+}
+
+/* ===== Celular ===== */
+@media (max-width: 640px) {
+  #productoForm {
+    grid-template-columns: 1fr;
+  }
+
+  #descripcion,
+  #btnGuardar,
+  #btnCancelar {
+    grid-column: auto;
+  }
+}
+
+

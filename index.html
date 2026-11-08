@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invex - Inventario</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header><h1>Invex</h1><p>Control de inventario</p></header>
+
+  <main>
+    <section class="resumen">
+      <div class="card"><h3>Productos</h3><p id="totalProductos">0</p></div>
+      <div class="card"><h3>Valor del inventario</h3><p id="valorInventario">$0.00</p></div>
+    </section>
+
+    <section class="form-section">
+      <h2 id="formTitulo">Agregar producto</h2>
+      <form id="productoForm" novalidate>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="number" id="precio" placeholder="Precio" step="0.01">
+        <input type="number" id="cantidad" placeholder="Cantidad">
+        <textarea id="descripcion" placeholder="Descripción (opcional)"></textarea>
+        <button type="submit" id="btnGuardar">Agregar</button>
+        <button type="button" id="btnCancelar" hidden>Cancelar</button>
+      </form>
+      <p id="mensaje" role="status"></p>
+    </section>
+
+    <section>
+      <h2>Productos registrados</h2>
+      <input type="search" id="buscador" placeholder="Buscar por nombre...">
+      <div id="productsGrid" class="products-grid"></div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
